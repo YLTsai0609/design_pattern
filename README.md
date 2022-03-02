@@ -54,7 +54,7 @@ Producer-Consumer Pattern
 
 | pattern | compelete | note  |
 |---------|-----------|-------|
-|模型-適圖-控制者模式(model–view–controller)||
+|模型-適圖-控制者模式(model–view–controller)|20220322|
 
 # 參考資料
 
