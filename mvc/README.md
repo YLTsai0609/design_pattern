@@ -77,7 +77,7 @@ MVC 是一種設計模式(是一種理念，不是一種技術)，主要目的�
 從更實際的角度切入，可以這樣考慮
 
 * Model - 後端資料庫 API
-* Controller - 控制 API 資料庫街口的 js
+* Controller - 控制 API 資料庫接口的 js
 * View - 前端顯示(HTML/CSS)
 
 ## Controller
@@ -86,10 +86,18 @@ MVC 是一種設計模式(是一種理念，不是一種技術)，主要目的�
 
 e.g. Controller 收到請求 --> 通知 Model 調度資料 --> 將資料傳給 View
 
-# Model
+## Model
 
 使用者想要對資料進行 CRUD 需要透過 Model 中的 js 來操作，例如電商的免運費，計算訂單總額等
 
-# View 
+## View 
 
 HTNL 樣板 - 如果是動態網站，會按照 Model 取出的資料內容，動態呈現
+
+# NOTE
+
+後記 : 
+
+1. `Controller` 很像 SOLID 中的依賴倒置原則(Dependency Inversion Principle)，過往或許是 View 和 Model 中間常常攪和在一起，導致改一個另一個就要跟著改，所以中間插一個 `Controller` 的抽象層，就可以將 `View`, `Model` 解耦和
+
+2. Web 通常和資料庫的互動是簡單的 CRUD ，當業務邏輯或是計算過於繁複時(例如文章推薦、搜尋結果等)，計算層的 data pipeline 可以放在 data team 的排程中，僅需以計算後的茲料來溝通，如此前後端就可以將複雜的計算邏輯切到其他團隊去
